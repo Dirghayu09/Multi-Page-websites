@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url(./back.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .header {
+        width: 100%;
+        height: 100vh;
+        background-image: url(./back.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .container {
+        padding: 10px 10%;
+      }
+      .logo {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        position: relative;
+        padding: 10px;
+      }
+      nav ul li a:hover {
+        color: yellowgreen;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      nav ul li a::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: dodgerblue;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .header-text {
+        margin-top: 5%;
+        font-size: 25px;
+      }
+
+      .header-text p {
+        font-size: 25px;
+        margin-top: 10px;
+        color: white;
+      }
+
+      .header-text h1 {
+        font-size: 60px;
+        margin-top: 10px;
+        color: white;
+      }
+      .header-text span {
+        color: dodgerblue;
+      }
+
+      .about {
+        background-image: url(./back.jpg);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-image: url(./back.jpg);
+        padding: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      /* .about{
+        display: block;
+        align-items: center;
+        justify-content: center;
+      }
+      .about h2{
+        flex-wrap: wrap;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .about p{
+        color: white;
+        padding: 5px 20px;
+      } */
+
+      .about2 {
+        display: flex;
+      }
+
+      .about h2 {
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .about2 img {
+        border-radius: 50%;
+        border: 1px solid white;
+        margin: 40px;
+      }
+
+      .about2 p {
+        color: white;
+        padding: 20px 0;
+        margin-left: 10px;
+        margin-top: 50px;
+      }
+
+    .skill{
+        padding: 40px;
+        color: white;
+    }
+    .skill h1{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .skill-col-1{
+        flex-basis: 5%;
+    }
+
+    .skill-col-1 img{
+        width: 200px;
+        height: 200px;
+        border: 50%;
+    }
+
+    .skill-col-2{
+        flex-basis: 80%;
+
+    }
+
+    .con {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+  gap: 10px; /* Gap between grid items */
+}
+
+.item img{
+  grid-column: 1 / 2;
+  margin-left: 40px;
+  padding: 5px 15px;
+  
+  border: 2px solid dodgerblue;
+  border-top-left-radius: 95px;
+  border-bottom-right-radius: 95px;
+}
+
+.content {
+  color:white;
+  grid-column: 2 / 3; /* Content spans second column */
+  padding: 5px 40px;
+}
+
+.contact-me{display: block;}
+
+.contact-me h2{
+
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact-me h3{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.contact-me p{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.contact-me a{
+  color:white;
+  text-decoration: none;
+  background-color: dodgerblue;
+  padding: 10px;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.contact-me a:hover{
+  color: white;
+  background-color: yellowgreen;
+}
+.links{
+  display: flex;
+  flex-basis: 10%;
+  height: 120px;
+  background-color: dodgerblue;
+  margin-top: 100px;
+  align-items:center;
+  justify-content: center;
+  
+}
+
+.links a{
+color:dodgerblue;
+border-radius: 20px;
+flex-wrap: wrap;
+margin-top: 50px;
+margin-left: 20px;
+text-decoration: none;
+background-color: white;
+padding: 10px;
+margin-bottom: 20px;
+
+}
+
+.links p{
+  color: white;
+  justify-content:end ;
+  align-items: end;
+  margin-top: 25px;
+  
+
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <nav>
+          <img
+            src="./240_F_695823409_EfMuGZeDX3PyImMtJ2gAzDcxINg8VkFz.jpg"
+            class="logo"
+          />
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#abt">About</a></li>
+            <li><a href="">Skills</a></li>
+            <li><a href="">Projects</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <h1>Hi, I'm <span>Dirghayu</span><br />From India</h1>
+          <p>Software Developer</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about">
+      <h2 id="abt">About Me</h2>
+      <div class="about2">
+        <img src="./acc" alt="" />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor hic
+          quis facilis quos voluptates ipsum perspiciatis eveniet quo iusto
+          exercitationem dicta repudiandae vero tenetur tempore nihil ratione,
+          illum amet quae. Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Dolor hic quis facilis quos voluptates ipsum perspiciatis
+          eveniet quo iusto exercitationem dicta repudiandae vero tenetur
+          tempore nihil ratione, illum amet quae.
+        </p>
+      </div>
+    </div>
+
+    <!-- <div class="skill">
+        <h1>About Me</h1>
+        <div class="container-3">
+            <div class="row">
+                <div class="skill-col-1"><img src="./acc"></div>
+                <div class="skill-col-2">Hello</div>
+
+                <div class="skill-col-1"><img src="./acc"></div>
+                <div class="skill-col-2">Hello</div>
+
+                <div class="skill-col-1"><img src="./acc"></div>
+                <div class="skill-col-2">Hello</div>
+            </div>
+        </div>
+      </div> -->
+
+      <div><h1 style="color: white; text-align: center; margin-bottom:20px;">My skills</h1></div>
+    <div class="con">
+      <div class="item">
+        <img src="./acc" alt="">
+        <div class="content">
+          <h3 style="color: white; margin-bottom: 10px;">Problem Solving</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi maxime aut rerum, voluptas harum sapiente est alias veniam reprehenderit quo quis expedita vitae odio tenetur laborum saepe mollitia perferendis error?</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./acc" alt="">
+        <div class="content">
+          <h3 style="color: white; margin-bottom: 10px;">Problem Solving</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi maxime aut rerum, voluptas harum sapiente est alias veniam reprehenderit quo quis expedita vitae odio tenetur laborum saepe mollitia perferendis error?</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./acc" alt="">
+        <div class="content">
+          <h3 style="color: white; margin-bottom: 10px;">Problem Solving</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi maxime aut rerum, voluptas harum sapiente est alias veniam reprehenderit quo quis expedita vitae odio tenetur laborum saepe mollitia perferendis error?</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./acc" alt="">
+        <div class="content">
+          <h3 style="color: white; margin-bottom: 10px;">Problem Solving</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi maxime aut rerum, voluptas harum sapiente est alias veniam reprehenderit quo quis expedita vitae odio tenetur laborum saepe mollitia perferendis error?</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>If you love hot wings as much as I do.</h3>
+      <p class="contact-message">Love hot wings as much as I do? Let's talk about how awesome they are! We can code
+        while we eat hot wings!</p>
+      <a class="btn" href="mailto:ilove@hotwings.com">CONTACT ME</a>
+    </div>
+
+    
+    <div class="links">
+        <a href="">Twitter</a>
+        <a href="">Linked in</a>
+        <a href="">Website</a>
+        <p>@all Rights Reserved By Dirghayu</p>
+    </div>
+    
+    
+
+  </body>
+</html>
